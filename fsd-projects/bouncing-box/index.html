@@ -6,9 +6,9 @@
     <script src="jquery.min.js"></script>
     <style>
       .box {
-        width: 70px;
-        height: 70px;
-        background-color: teal;
+        width: 80px;
+        height: 80px;
+        background-color: rgb(122, 148, 231);
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -44,13 +44,21 @@
           boardWidth = board.width();
         });
 
+        // Call update repeatedly
         setInterval(update, 50);
         box.on("click", handleBoxClick);
 
-        function moveBoxTo(newPositionX) {
+        // Declare variables outside functions for persistence
+        var positionX = 0; // Horizontal position of the box
+        var points = 0;    // Score counter
+        var speed = 10;    // Speed of movement
+
+        // Function to move box to a specific X position
+        function moveBoxTo(newPositionX) { 
           box.css("left", newPositionX);
         }
 
+        // Function to change the text inside the box
         function changeBoxText(newText) {
           box.text(newText);
         }
@@ -59,27 +67,22 @@
         /////////////////// YOUR CODE BELOW HERE /////////////////////////
         //////////////////////////////////////////////////////////////////
 
-        // TODO 2 - Variable declarations
-        var positionX = 0;
-        var points = 0;
-        var speed = 10;
-
         /**
          * This Function will be called 20 times/second.
          */
         function update() {
-          // Increase positionX by speed
-          positionX = positionX + speed;
+          // Update positionX based on current speed
+          positionX += speed;
 
-          // Call moveBoxTo with positionX
+          // Move the box to positionX
           moveBoxTo(positionX);
 
-          // Check for Right Boundary
-          if (positionX > boardWidth) {
+          // Bounce off the right edge
+          if (positionX > boardWidth - box.width()) {
             speed *= -1; // Reverse direction
           }
 
-          // Check for Left Boundary
+          // Bounce off the left edge
           if (positionX < 0) {
             speed *= -1; // Reverse direction
           }
@@ -89,19 +92,18 @@
          * This Function will be called each time the box is clicked.
          */
         function handleBoxClick() {
-          // Increment points by 1
-          points = points + 1;
+          // Increment points
+          points += 1;
 
-          // Update the text on the box to show current points
+          // Update the score display
           changeBoxText(points);
 
           // Reset positionX to 0
           positionX = 0;
 
-          // Update speed using the linear formula: (3 * points) + 10
+          // Recalculate speed based on points
           speed = 3 * points + 10;
         }
-        
       })();
     </script>
   </body>
