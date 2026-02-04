@@ -1,62 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-      <title>Da Best website</title>
-  <link rel="stylesheet" href="style.css" /> 
-           
-        
-    </head>
-    <body>
-        <!-- ToDo 10: "All content goes here" comment -->
-        <!-- All content goes here -->
-        
-        <!-- ToDo 3: Create Sections for the Menu and Main Content, ToDo 10: Assigned id of “all-contents” -->
-        <div id="all-contents">
-            <!-- ToDo 3: <nav> tags within the <div> tags -->
-            <nav>
-                <!-- ToDo 8: Navigation and Site Title -->
-                <h1>the best site</h1>
-                <!-- ToDo 8 & 10: <ul> element with id “nav-ul” -->
-                <ul id="nav-ul">
-                    <!-- ToDo 8 & 10: <li> tags with class “nav-li” and <a> tags -->
-                    <li class="nav-li">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="portfolio.html">Portfolio</a>
-                    </li>
-                </ul>
-            </nav>
+var positionX = 0;
+var points = 0
+var speed = 10
+function update() {
+    positionX = positionX + speed;
+    moveBoxTo(positionX);
+     if (positionX > boardWidth) {speed *= -1;
+     }
+     if (positionX < 0) { 
+         speed *= -1;
+     }
+    }
+    function handleBoxClick() { 
+         points++;
+         positionX = 0;
+         changeBoxText(points);
+         speed = 3 * points + 10;
+         var randomColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
+    changeBoxColor(randomColor);
+    }
 
-            <!-- ToDo 3: <main> tags within the <div> tags -->
-            <main>
-                <!-- ToDo 4: Has 2 comments within the <main> element, ToDo 10: give opening <div> a class attribute of “sidebar” -->
-                <!-- Sidebar section comment -->
-                <div class="sidebar">
-                    <!-- ToDo 7: Add an Image, ToDo 10: Give the <img> tag a class attribute of “sidebar-img” -->
-                    <img class="sidebar-img" src="data:image/jpeg;base64,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" alt="Profile Picture">
-                </div>
-
-                <!-- ToDo 4: 2 <div> elements nested within <main> tags, ToDo 10: The opening <div> tag has a “content” class attribute -->
-                <!-- Content section comment -->
-                <div class="content">
-                    <!-- ToDo 5: Add Content -->
-                    <h2>zachary bartholomew</h2>
-                    <p>I am a retaried football player, my grandma is from panama and i write poems</p>
-                </div>
-                
-                <!-- ToDo 6: Add More Content - Interests, ToDo 10: The <div> element has an id attribute of “interests” -->
-                <!-- Interests section comment -->
-                <div id="interests">
-                    <h3>Interests</h3>
-                    <!-- ToDo 6: <ul> element with 3 nested <li> tags -->
-                    <ul>
-                        <li>gaming</li>
-                        <li>Miliatry</li>
-                        <li>sleeping</li>
-                    </ul>
-                </div>
-            </main>
-        </div>
-    </body>
-</html>
+    
