@@ -5,12 +5,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Container for all content */
 #all-contents {
     max-width: 800px;
     margin: auto;
 }
 
-/* navigation menu */
+/* Navigation styles */
 nav {
     background: rgb(239, 80, 41);
     margin: 0 auto;
@@ -18,6 +19,7 @@ nav {
     padding: 10px;
 }
 
+/* Heading styles */
 h1 {
     display: flex;
     align-items: center;
@@ -26,75 +28,51 @@ h1 {
     margin: 0;
 }
 
+/* Navigation list styles */
 #nav-ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
-
 .nav-li {
     display: inline-block;
     padding: 0 10px;
 }
-
 a {
     text-decoration: none;
     color: #fff;
 }
 
-/* main container area beneath menu */
+/* Main container styles */
 main {
     background: rgb(245, 238, 219);
     display: flex;
     margin-top: 20px;
 }
 
+/* Sidebar styles */
 .sidebar {
     margin-right: 25px;
     padding: 10px;
 }
 
-.sidebar-img {
-    width: 200px;
-}
-
+/* Content area styles */
 .content {
     flex: 1;
     padding: 15px;
+    position: relative; /* To contain absolutely positioned box */
 }
 
-/* interests section styles */
-#interests {
-    border: 4px silver ridge;
-    padding: 8px;
-    margin-top: 20px;
-}
-
-h2, h3 {
-    margin: 0px;
-}
-/* Portfolio styles */
-.content h1 {
-  color: black;
-}
-
-#portfolio {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#portfolio li {
-  background: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-#portfolio li:hover {
-  background: #eee;
-}
-
-#portfolio a {
-  text-decoration: none;
-  color: #454545;}
+/* Styles for the bouncing box */
+.box {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(122, 148, 231);
+    font-size: 300%;
+    text-align: center;
+    user-select: none;
+    display: block;
+    position: absolute; /* Position relative to .content */
+    top: 100px;
+    left: 0px;}
