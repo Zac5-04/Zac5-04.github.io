@@ -26,25 +26,26 @@ $(function () {
     // ONLY CHANGE BELOW THIS POINT //
     //////////////////////////////////
 
+    // TODO 0 - Initialize Player
+   
     // TODO 1 - Enable the Grid
-    // toggleGrid();
-
+    toggleGrid();
 
     // TODO 2 - Create Platforms
+    createPlatform(0, 450, 200, 15);
+    createPlatform(250, 400, 200, 15);
+    createPlatform(500, 350, 200, 15);
+    createPlatform(750, 300, 200, 15);
+    createPlatform(190,250,200,15);
 
-
-
-
-    // TODO 3 - Create Collectables
-
-
-
-    
+  // TODO 3 - Create Collectables
+  createCollectable("Ruby",1350,50);
+  createCollectable("diamond",200,170,0.5,0.7);
+  createCollectable("jewel",300,200);
     // TODO 4 - Create Cannons
+     ;createCannon("top", 200, 100);
+createCannon("right", 300, 2000);
 
-
-    
-    
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
