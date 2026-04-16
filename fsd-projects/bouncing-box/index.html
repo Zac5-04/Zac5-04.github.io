@@ -73,9 +73,14 @@
         function update() {
           // Update positionX based on current speed
           positionX += speed;
-
+          if (positionX )
+          else if ( poitionX ){ }
           // Move the box to positionX
-          moveBoxTo(positionX);
+          moveBoxTo(450);
+          moveBoxTo(boardWidth);
+          var exampleVariable =5;
+          variableName = variableName +10;
+          variableName +=10;
 
           // Bounce off the right edge
           if (positionX > boardWidth - box.width()) {
@@ -94,15 +99,22 @@
         function handleBoxClick() {
           // Increment points
           points += 1;
-
+          variableName = variableName +1;
+          variableName++;
           // Update the score display
           changeBoxText(points);
 
           // Reset positionX to 0
           positionX = 0;
+          positionX = positionX + speed;
+          variableName = variableName + 3 
+          variable += 3;
 
           // Recalculate speed based on points
           speed = 3 * points + 10;
+          if (positionX  boardWidth )
+          speed = speed * -1;
+          speed *= -1;
         }
       })();
     </script>

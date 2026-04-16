@@ -39,12 +39,13 @@ $(function () {
     createPlatform(190,250,200,15);
 
   // TODO 3 - Create Collectables
-  createCollectable("Ruby",1350,50);
+  createCollectable("steve",1350,50);
   createCollectable("diamond",200,170,0.5,0.7);
-  createCollectable("jewel",300,200);
+  createCollectable("diamond",200,260,205,20);
     // TODO 4 - Create Cannons
      ;createCannon("top", 200, 100);
 createCannon("right", 300, 2000);
+createCannon("left", 500, 900)
 
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
